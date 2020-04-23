@@ -1,4 +1,4 @@
-# Store_Flutter ![Technique](https://img.shields.io/badge/Version-1.000-blue)
+# Store_Flutter ![Technique](https://img.shields.io/badge/Version-1.0-blue)
 A Flutter app for buying and selling
 ## Technologies Used
 - [Flutter](https://flutter.dev/)
