@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/widgets/price_tag.dart';
 
 class Products extends StatefulWidget {
+  
   final List<Map<String, dynamic>> products;
 
   Products(
@@ -38,18 +40,7 @@ class _ProductsState extends State<Products> {
               SizedBox(
                 width: 10.0,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.5),
-                decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                    borderRadius: BorderRadius.circular(5.0)),
-                child: Text(
-                  '\$${widget.products[index]['price'].toString()}',
-                  style: TextStyle(
-                    color: Colors.white,  
-                  ),
-                ),
-              ),
+             PriceTag(widget.products[index]['price'].toString())   
             ],
           ),
           Container(

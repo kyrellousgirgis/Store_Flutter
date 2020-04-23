@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/widgets/products.dart';
 
 
-import '../product_manager.dart';
+
 
 class HomePage extends StatelessWidget {
   final List<Map<String,dynamic>>products;
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
       title: Text('eASYlIST'),
       actions: <Widget>[IconButton(icon: Icon(Icons.favorite,color: Colors.white,), onPressed: null)],
       ),
-      body: ProductManager(products),
+      body: Products(products),
     );
   }
 }

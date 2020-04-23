@@ -1,16 +1,17 @@
 
 import 'package:flutter/material.dart';
 
-class create extends StatefulWidget{
-  int radio;
+class Create extends StatefulWidget{
+  
   @override
- State<StatefulWidget> createState()=>fulWidget();
+ State<StatefulWidget> createState()=>FulWidget();
 }
 
 
 
-class fulWidget extends State<create>
+class FulWidget extends State<Create>
 {
+  int radio=0;
   @override
   Widget build(BuildContext context)
   {
@@ -18,7 +19,7 @@ class fulWidget extends State<create>
     void radiochecked(int varr){
    setState((){
       print(varr);
-     widget.radio=varr;
+     radio=varr;
    });
   }
     return Scaffold(
@@ -39,7 +40,7 @@ class fulWidget extends State<create>
                   children: <Widget>[
                     Radio(
                       value: 1,
-                      groupValue: widget.radio,
+                      groupValue: radio,
                       onChanged:radiochecked,
                     ),
                     Text('Male')
@@ -53,7 +54,7 @@ class fulWidget extends State<create>
                   children: <Widget>[
                     Radio(
                       value: 0,
-                      groupValue: widget.radio,
+                      groupValue: radio,
                       onChanged:radiochecked,
                     ),
                     Text('Female')
@@ -67,7 +68,7 @@ class fulWidget extends State<create>
                   children: <Widget>[
                     Radio(
                       value: 2,
-                      groupValue: widget.radio,
+                      groupValue: radio,
                       onChanged:radiochecked,
                     ),
                     Text('animal')
