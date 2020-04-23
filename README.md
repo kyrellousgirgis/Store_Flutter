@@ -8,7 +8,7 @@ A Flutter app for buying and selling
 ## Techniques
 ![Technique](https://img.shields.io/badge/Techniqe-UI-yellow)
 ![Technique](https://img.shields.io/badge/Technique-UX-important)
-![Technique](https://img.shields.io/badge/Technique-Fire%10Base-success)
+![Technique](https://img.shields.io/badge/Technique-Fire%20Base-success)
 
 **for _training_**
 
