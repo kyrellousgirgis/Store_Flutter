@@ -3,4 +3,4 @@ A Flutter app for buying and selling
 ## Technologies Used
 ### Dart 
 ### Flutter
-##### for training
+**##### for _training_**
