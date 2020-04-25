@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/widgets/product/price_tag.dart';
+import 'package:my_app/widgets/ui_elements/title.dart';
 
 class ProductPage extends StatelessWidget {
   final String imageURL;
@@ -57,14 +59,7 @@ class ProductPage extends StatelessWidget {
             Image.asset(imageURL),
             Container(
               padding: EdgeInsets.all(10.0),
-              child: Text(
-                title,
-                style: TextStyle(
-                  fontFamily: 'Oswald',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 26.0,
-                ),
-              ),
+              child: TitleDefault(title,)
             ),
             //Container(
             //padding: EdgeInsets.all(10.0),
@@ -96,19 +91,8 @@ class ProductPage extends StatelessWidget {
                     ),
                     padding: EdgeInsets.all(10.0),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.deepOrange,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(5.0)),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
-                    child: Text(
-                      price.toString(),
-                      style:
-                          TextStyle(color: Colors.white, fontFamily: 'Oswald'),
-                    ),
-                  ),
+                  
+                  PriceTag(price.toString()),
                   SizedBox(width: 10.0)
                 ],
                 mainAxisAlignment: MainAxisAlignment.center,
