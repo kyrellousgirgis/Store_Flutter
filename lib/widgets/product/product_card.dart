@@ -2,38 +2,31 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/widgets/product/price_tag.dart';
 import 'package:my_app/widgets/ui_elements/title.dart';
+import 'location.dart';
 
-
-import '../location.dart';
-
-
-class ProductCard extends StatelessWidget{
+class ProductCard extends StatelessWidget {
   final Color heartIconColor = Colors.red;
   final IconData heartIcon = Icons.favorite_border;
-  final Map<String,dynamic>product;
+  final Map<String, dynamic> product;
   final int productIndex;
-  ProductCard(this.product,this.productIndex);
-  @override
-  Widget build(BuildContext context) {
-    
-    return Card(
-      child: Column(
-        children: <Widget>[
-          Image.asset(product['image']),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              TitleDefault(product['title']),
-              SizedBox(
-                width: 10.0,
-              ),
-              PriceTag(product['price'].toString())
-            ],
-          ),
-          LocationTextWidget(
-            product['location'],
-          ),
-          ButtonBar(
+  ProductCard(this.product, this.productIndex);
+  Widget _buildTitlePriceRow(){
+    return  Container(
+            padding: EdgeInsets.only(top: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TitleDefault(product['title']),
+                SizedBox(
+                  width: 10.0,
+                ),
+                PriceTag(product['price'].toString())
+              ],
+            ),
+          );
+  }
+  Widget _buildButtonBar(BuildContext context){
+    return   ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               IconButton(
@@ -58,7 +51,19 @@ class ProductCard extends StatelessWidget{
                 color: heartIconColor,
               ),
             ],
-          )
+          );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Image.asset(product['image']),
+         _buildTitlePriceRow(),
+          LocationTextWidget(
+            product['location'],
+          ),
+        _buildButtonBar(context),
         ],
       ),
     );

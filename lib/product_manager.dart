@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/widgets/products.dart';
+import 'package:my_app/widgets/product/products.dart';
+
 
 
 

@@ -41,6 +41,29 @@ class ProductPage extends StatelessWidget {
     });
   }
 
+Widget _buildAdressPriceRow(){
+  return Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  SizedBox(width: 10.0),
+                  Text(
+                    location,
+                    style: TextStyle(fontFamily: 'Oswald', color: Colors.grey),
+                  ),
+                  Container(
+                    child: Text(
+                      '|',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    padding: EdgeInsets.all(10.0),
+                  ),
+                  
+                  PriceTag(price.toString()),
+                  SizedBox(width: 10.0)
+                ],
+                mainAxisAlignment: MainAxisAlignment.center,
+              );
+}
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -76,27 +99,7 @@ class ProductPage extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  SizedBox(width: 10.0),
-                  Text(
-                    location,
-                    style: TextStyle(fontFamily: 'Oswald', color: Colors.grey),
-                  ),
-                  Container(
-                    child: Text(
-                      '|',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    padding: EdgeInsets.all(10.0),
-                  ),
-                  
-                  PriceTag(price.toString()),
-                  SizedBox(width: 10.0)
-                ],
-                mainAxisAlignment: MainAxisAlignment.center,
-              ),
+              child:_buildAdressPriceRow(),
             ),
             SizedBox(height: 10.0),
             Text(description)
