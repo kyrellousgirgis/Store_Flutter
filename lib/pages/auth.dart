@@ -99,34 +99,42 @@ class _AuthState extends State<Auth> {
 
   @override
   Widget build(BuildContext context) {
+    final double deviceWidth = MediaQuery.of(context).size.width;
+    final double targetWidth = deviceWidth>750.0?700.0:deviceWidth*.95; 
     return Scaffold(
       appBar: AppBar(
         title: Text('Authentication'),
       ),
       body: Center(
         child: Container(
-            decoration: BoxDecoration(
-              image: _buildDecorationImage(),
-            ),
-            padding: EdgeInsets.fromLTRB(50.0, 0, 50.0, 0),
-            child: Center(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(vertical: 5.0),
-                child: Column(children: <Widget>[
-                  _buildEmailTextField(),
-                  SizedBox(height: 10),
-                  _buildPasswordTextField(),
-                  SizedBox(height: 10),
-                  _buildAcceptSwitch(),
-                  SizedBox(height: 10),
-                  RaisedButton(
-                    onPressed: _submitForm,
-                    color: Theme.of(context).accentColor,
-                    child: Text('Login'),
-                  ),
-                ]),
+          decoration: BoxDecoration(
+            image: _buildDecorationImage(),
+          ),
+          //padding: EdgeInsets.fromLTRB(50.0, 0, 50.0, 0),
+          child: Center(
+            child: SingleChildScrollView(
+              //padding: EdgeInsets.symmetric(vertical: 5.0),
+              child: Container(
+                width: targetWidth,
+                child: Column(
+                  children: <Widget>[
+                    _buildEmailTextField(),
+                    SizedBox(height: 10.0),
+                    _buildPasswordTextField(),
+                    SizedBox(height: 10.0),
+                    _buildAcceptSwitch(),
+                    SizedBox(height: 10.0),
+                    RaisedButton(
+                      onPressed: _submitForm,
+                      color: Theme.of(context).accentColor,
+                      child: Text('Login'),
+                    ),
+                  ],
+                ),
               ),
-            )),
+            ),
+          ),
+        ),
       ),
     );
   }
